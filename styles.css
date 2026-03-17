@@ -23,3 +23,15 @@
     margin: 0;
 }
 
+body {
+    min-height: 100vh;
+    background: radial-gradient(ellipse at 50% 0%, #ff9a56 0%, #e05b1f 40%, #8b2400 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+    padding: 20px;
+    position: relative;
+}
