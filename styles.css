@@ -1,0 +1,17 @@
+/* ─── CSS Variables ─────────────────────────────────────── */
+:root{
+    --red:          #d62828;
+    --red-dark:     #a01e1e;
+    --red-light:    #f05252;
+    --knob:         #c0392b;
+    --knob-shine:   #e74c3c;
+    --cream:        #f5efe0;
+    --tan:          #e8d8b8;
+    --tan-dark:     #c9b98a;
+    --screen-bg:    #dde8cc;
+    --screen-line:  #bfcfaa;
+    --silver:       #b0b8c4;
+    --shadow:       rgba(0,0,0,.35);
+    --text-dark:    #2c1a0e;
+    --grid-size:    960px;
+}
