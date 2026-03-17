@@ -20,9 +20,38 @@
             <h1>Etch . a . Sketch</h1>
             <div class="dot"></div>
         </div>
+
         <!-- Screen -->
         <div class="screen-bezel">
             <div id="grid-container"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <!--Right Knob -->
+            <div class="knob-wrap">
+                <div class="knob" id="knob-left" title="Shake to clear!"></div>
+                <span class="knob-label">Shake</span>
+            </div>
+
+            <!-- Center controls -->
+            <div class="center-controls">
+                <div class="mode-pills">
+                    <button class="pill active" data-mode="random" title="Random color per stroke">🎨 Random</button>
+                    <button class="pill" data-mode="darken" title="Darken 10% each hover">🌑 Darken</button>
+                    <button class="pill" data-mode="classic" title="Single color fill">✏️ Classic</button>
+                </div>
+                <button class="btn btn-primary" id="btn-resize">⊞ New Grid Size</button>
+                <button class="btn btn-secondary" id="btn-clear">✕ Clear</button>
+                <span class="size-display">16 × 16</span>
+            </div>
+
+            <!--Right Knob -->
+            <div class="knob-wrap">
+                <div class="knob" id="knob-right" title="Shake to clear!"></div>
+                <span class="knob-label">Shake</span>
+            </div>
+
         </div>
     </div>
 </body>
