@@ -119,3 +119,14 @@ body::before {
     transition: background-color 0.05s ease;
 }
 
+/* ─── Controls row ──────────────────────────────────────── */
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 24px;
+    padding: 0 8px;
+}
+
