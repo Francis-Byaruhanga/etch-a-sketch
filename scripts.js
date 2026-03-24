@@ -15,7 +15,7 @@ function buildGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const cell = document.createElement('div');
         cell.classList.add('grid-cell');
-        cell.style.width = `${cellPercent}%`;{
+        cell.style.width = `${cellPercent}%`;
         cell.style.height = `${cellPercent}%`;
         cell.dataset.opacity = '0'; // Tracks darkening level 0-1
 
@@ -37,3 +37,4 @@ function randomHex() {
 
     return `rgb(${r},${g},${b})`;
 }
+
