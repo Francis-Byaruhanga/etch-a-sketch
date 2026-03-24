@@ -40,7 +40,7 @@ function randomHex() {
 
 function applyColor(cell) {
     if (drawMode === 'random') {
-        cell.style.backgroundColor = randomHex;
+        cell.style.backgroundColor = randomHex();
         cell.style.opacity = '1';
     } else if (drawMode === 'darken') {
         let op = parseFloat(cell.dataset.opacity);
@@ -55,7 +55,7 @@ function applyColor(cell) {
         cell.style.opacity = '1';
     }
     // Tiny pop animation
-    cell.classList.remove = ('cell-pop');
+    cell.classList.remove('cell-pop');
     void cell.offsetWidth; //Reflow trick
     cell.classList.add('cell-pop');
 }
@@ -82,8 +82,8 @@ function promptResize() {
 function shakeAndClear() {
     const toy = document.getElementById('toy');
     toy.classList.remove('shaking');
-    void toy(offsetWidth);
-    toy.classList.remove('shaking');
+    void toy.offsetWidth;
+    toy.classList.add('shaking');
     setTimeout(clearGrid, 200);
 }
 
@@ -100,7 +100,7 @@ document.getElementById('knob-right').addEventListener('click', shakeAndClear);
 // Mode pills
 document.querySelectorAll('.pill').forEach(pill => {
     pill.addEventListener('click', () => {
-        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.pill').forEach(p => { p.classList.remove('active'); });
         pill.classList.add('active');
         drawMode = pill.dataset.mode;
     });
@@ -108,3 +108,6 @@ document.querySelectorAll('.pill').forEach(pill => {
 
 // Prevent context menu on grid so right-drag works smoothly
 document.getElementById('grid-container').addEventListener('contextmenu', e => e.preventDefault());
+
+// ── Init ──────────────────────────────────────────────────
+buildGrid(currentSize);
