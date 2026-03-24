@@ -246,3 +246,11 @@ body::before {
     color: #5a2d00;
     box-shadow: 0 2px 8px rgba(0,0,0,.35);
 }
+
+/* ─── Grid size display ─────────────────────────────────── */
+#size-display {
+    font-family: 'Boogaloo', cursive;
+    font-size: .95rem;
+    color: rgba(255,255,255,.8);
+    letter-spacing: 1px;
+}
