@@ -267,4 +267,11 @@ body::before {
 
 .shaking { animation: shake .55s ease; }
 
+/* ─── Cell drawn shimmer ────────────────────────────────── */
+@keyframes cellPop {
+    0%  { transform: scale(1); }
+    50% { transform: scale(1.18); }
+    100% { transform: scale(1)}
+}
 
+.cell-pop { animation: cellPop .12s ease}
