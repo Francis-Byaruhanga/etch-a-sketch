@@ -59,3 +59,12 @@ function applyColor(cell) {
     void cell.offsetWidth; //Reflow trick
     cell.classList.add('cell-pop');
 }
+
+// Clear grid
+function clearGrid() {
+    document.querySelectorAll(".grid-cell").forEach(cell => {
+        cell.style.backgroundColor = '';
+        cell.style.opacity = '1';
+        cell.dataset.opacity = '0';
+    }) 
+}
