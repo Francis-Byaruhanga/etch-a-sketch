@@ -89,4 +89,19 @@ function shakeAndClear() {
 
 // ── Event wiring ──────────────────────────────────────────
 // Global mouse tracking for draw-on-drag
+document.addEventListener('mousedown', () => { isDrawing = true; });
+document.addEventListener('mouseup', () => { isDrawing = false; });
 
+document.getElementById('btn-clear').addEventListener('click', clearGrid);
+document.getElementById('btn-resize').addEventListener('click', promptResize);
+document.getElementById('knob-left').addEventListener('click', shakeAndClear);
+document.getElementById('knob-right').addEventListener('click', shakeAndClear);
+
+// Mode pills
+document.querySelectorAll('.pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+        document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        drawMode = pill.dataset.mode;
+    });
+});
