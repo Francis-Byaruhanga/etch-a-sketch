@@ -176,3 +176,44 @@ body::before {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+
+/* ─── Center buttons ────────────────────────────────────── */
+.center-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    font-family: 'Boogaloo', cursive;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 9px 22px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: transform .1s, box-shadow .1s;
+    outline: none;
+}
+
+.btn-primary {
+    background: linear-gradient(160deg, #ffdc6e, #f5a623);
+    color: #5a2d00;
+    box-shadow:
+        0 4px 0 #b57320,
+        0 6px 12px rgba(0,0,0,.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow:
+        0 6px 0 #b57320,
+        0 8px 16px rgba(0,0,0,.35);
+}
+
+.btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #8a6940;
+}
