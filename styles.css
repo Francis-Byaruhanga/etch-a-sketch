@@ -130,3 +130,49 @@ body::before {
     padding: 0 8px;
 }
 
+/* ─── Knob ──────────────────────────────────────────────── */
+.knob-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.knob {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, var(--knob-shine), var(--knob) 60%, #7a1a12);
+    box-shadow: 
+        0 4px 10px rgba(0,0,0,.5),
+        inset 0 1px 3px rgba(255,255,255,.35);
+    position: relative;
+    cursor: pointer;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.knob::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, .45);
+    border-radius: 50%;
+    position: absolute;
+    top: 14px;
+    left: 16px;
+}
+.knob:hover {
+    transform: scale(1.06);
+}
+.knob:active {
+    transform: scale(.95);
+    box-shadow: 0 1px 4px rgba(0,0,0,.5);
+}
+
+.knob-label {
+    font-size: .7rem;
+    font-weight: 700;
+    color: rgba(255,255,255,.75);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
