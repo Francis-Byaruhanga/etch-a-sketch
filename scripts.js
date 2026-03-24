@@ -68,3 +68,12 @@ function clearGrid() {
         cell.dataset.opacity = '0';
     }) 
 }
+
+// ── Resize prompt ─────────────────────────────────────────
+function promptResize() {
+    let size = parseInt(prompt('Enter grid size(1 - 100):' currentSize), 10);
+    if (isNaN(size) || size < 1)    size = 1;
+    if (size > 100)                 size = 100;
+    currentSize = size;
+    buildGrid(currentSize);
+}
