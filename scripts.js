@@ -105,3 +105,6 @@ document.querySelectorAll('.pill').forEach(pill => {
         drawMode = pill.dataset.mode;
     });
 });
+
+// Prevent context menu on grid so right-drag works smoothly
+document.getElementById('grid-container').addEventListener('contextmenu', e => e.preventDefault());
