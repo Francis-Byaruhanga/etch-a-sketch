@@ -38,3 +38,24 @@ function randomHex() {
     return `rgb(${r},${g},${b})`;
 }
 
+function applyColor(cell) {
+    if (drawMode === 'random') {
+        cell.style.backgroundColor = randomHex;
+        cell.style.opacity = '1';
+    } else if (drawMode === 'darken') {
+        let op = parseFloat(cell.dataset.opacity);
+        if (op < 1) {
+            op = Math.min(op + 0.1, 1);
+            cell.style.backgroundColor = '#1a1a2e';
+            cell.style.opacity = String(op);
+        }
+    } else {
+        // Classic
+        cell.style.backgroundColor = CLASSIC_COLOR;
+        cell.style.opacity = '1';
+    }
+    // Tiny pop animation
+    cell.classList.remove = ('cell-pop');
+    void cell.offsetWidth; //Reflow trick
+    cell.classList.add('cell-pop');
+}
