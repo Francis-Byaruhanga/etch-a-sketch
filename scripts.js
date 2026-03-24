@@ -71,9 +71,22 @@ function clearGrid() {
 
 // ── Resize prompt ─────────────────────────────────────────
 function promptResize() {
-    let size = parseInt(prompt('Enter grid size(1 - 100):' currentSize), 10);
+    let size = parseInt(prompt('Enter grid size(1 - 100):', currentSize), 10);
     if (isNaN(size) || size < 1)    size = 1;
     if (size > 100)                 size = 100;
     currentSize = size;
     buildGrid(currentSize);
 }
+
+// ── Shake-to-clear via knobs ──────────────────────────────
+function shakeAndClear() {
+    const toy = document.getElementById('toy');
+    toy.classList.remove('shaking');
+    void toy(offsetWidth);
+    toy.classList.remove('shaking');
+    setTimeout(clearGrid, 200);
+}
+
+// ── Event wiring ──────────────────────────────────────────
+// Global mouse tracking for draw-on-drag
+
