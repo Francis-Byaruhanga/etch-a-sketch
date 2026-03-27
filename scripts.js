@@ -1,7 +1,7 @@
 // ── State ────────────────────────────────────────────────
 let currentSize = 16;
 let drawMode = 'random';  // 'random' | 'darken' | 'classic'
-let isDrawing = false;  // true while mouse button is held
+let isDrawing = false;  // true while pointer (mouse/touch) is active
 const CLASSIC_COLOR = '#2d2d2d';
 
 // ── Grid builder ─────────────────────────────────────────
@@ -19,9 +19,9 @@ function buildGrid(size) {
         cell.style.height = `${cellPercent}%`;
         cell.dataset.opacity = '0'; // Tracks darkening level 0-1
 
-        // Draw on mouseenter while button held OR on direct mousedown
-        cell.addEventListener('mouseenter', () => { if (isDrawing) applyColor(cell); });
-        cell.addEventListener('mousedown', (e) => { e.preventDefault(); applyColor(cell); });
+        // Draw on pointerenter while pointer down OR on direct pointerdown
+        cell.addEventListener('pointerenter', () => { if (isDrawing) applyColor(cell); });
+        cell.addEventListener('pointerdown', (e) => { e.preventDefault(); applyColor(cell); });
 
         container.appendChild(cell);
     }
@@ -88,9 +88,9 @@ function shakeAndClear() {
 }
 
 // ── Event wiring ──────────────────────────────────────────
-// Global mouse tracking for draw-on-drag
-document.addEventListener('mousedown', () => { isDrawing = true; });
-document.addEventListener('mouseup', () => { isDrawing = false; });
+// Global pointer tracking for draw-on-drag
+document.addEventListener('pointerdown', () => { isDrawing = true; });
+document.addEventListener('pointerup', () => { isDrawing = false; });
 
 document.getElementById('btn-clear').addEventListener('click', clearGrid);
 document.getElementById('btn-resize').addEventListener('click', promptResize);
